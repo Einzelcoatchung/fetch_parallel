@@ -26,4 +26,23 @@ const fetchDataParallelOneResponse = () => {
     console.log(dataAll)
   })
 }
+
+
+// AXIOS
+const fetchDataParallelOneResponse = () => {
+  console.log("PARALLEL fetch")
+
+  console.log("Starting to fetch todos...")
+  
+  const promFetches = []
+
+  promFetches.push( axios.get("https://jsonplaceholder.typicode.com/todos") )
+  promFetches.push( axios.get("https://jsonplaceholder.typicode.com/users") )
+
+  Promise.all(promFetches)
+  .then(responses => {
+     const dataAll = responses.map( resp => resp.data ) 
+     res.send( dataAll )
+  })
+}
 ```
