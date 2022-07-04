@@ -1,5 +1,7 @@
 # fetch_parallel
 
+```
+
 const fetchDataParallelOneResponse = () => {
   console.log("PARALLEL fetch")
 
@@ -24,3 +26,4 @@ const fetchDataParallelOneResponse = () => {
     console.log(dataAll)
   })
 }
+```
